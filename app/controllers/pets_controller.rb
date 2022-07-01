@@ -25,6 +25,13 @@ def update
 end
 
   def destroy
+    pet = Pet.find(params[:id])
+    if pet.destroy
+      render json: pet
+    else
+      render json: pet.errors, status: 422
+    end
+
   end
 
 end
