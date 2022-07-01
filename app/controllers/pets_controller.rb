@@ -11,7 +11,11 @@ class PetsController < ApplicationController
   end
 
 def update
-  end
+    pet = Pet.find(params[:id])
+    pet.update(pet_params)
+    render json: pet
+    
+end
 
   def destroy
   end
